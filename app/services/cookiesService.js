@@ -40,7 +40,7 @@ export const destroyUserSession = async (request) => {
 		request.headers.get("Cookie")
 	);
 
-	return redirect("/", {
+	return redirect("/auth", {
 		headers: {
 			"Set-Cookie": await sessionStorage.destroySession(session),
 		},

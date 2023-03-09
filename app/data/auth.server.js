@@ -3,6 +3,7 @@ import { prisma } from "./database.server";
 import { createUserSession } from "~/services/cookiesService";
 
 export const signup = async ({ email, password }) => {
+	console.log(email, password);
 	const existingUser = await prisma.user.findFirst({ where: { email } });
 
 	if (existingUser) {
@@ -19,11 +20,11 @@ export const signup = async ({ email, password }) => {
 		data: { email, password: passwordHash },
 	});
 
-	return createUserSession(user.id, "/expenses");
+	return createUserSession(user.id, "/");
 };
 
 export const login = async ({ email, password }) => {
-	const existingUser = await prisma.user.findFirst({ where: { email } });
+	const existingUser = await prisma?.user.findFirst({ where: { email } });
 
 	if (!existingUser) {
 		const error = new Error(
@@ -43,5 +44,5 @@ export const login = async ({ email, password }) => {
 		throw error;
 	}
 
-	return createUserSession(existingUser.id, "/expenses");
+	return createUserSession(existingUser.id, "/");
 };

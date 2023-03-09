@@ -67,15 +67,7 @@ export const AuthForm = () => {
 							type="checkbox"
 							className="text-red-600 border border-gray-300 shadow-sm focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50"
 						/>
-						{validationErrors && (
-							<ul>
-								{Object.values(validationErrors).map(
-									(error) => (
-										<li key={error}>{error}</li>
-									)
-								)}
-							</ul>
-						)}
+
 						<label className="block ml-2 text-sm leading-5 text-slate-400">
 							Remember me
 						</label>
@@ -84,6 +76,13 @@ export const AuthForm = () => {
 						Forgot your password?
 					</Link>
 				</div>
+				{validationErrors && (
+					<ul className="flex justify-center text-white underline text-xl decoration-red-600 m-5 hover:delay-150 hover:text-red-600 hover:decoration-white ">
+						{Object.values(validationErrors).map((error) => (
+							<li key={error}>{error}</li>
+						))}
+					</ul>
+				)}
 				<div className="mt-6">
 					<button
 						className="inline-flex items-center justify-center w-full px-4 py-2 font-semibold text-white capitalize transition bg-red-600 border border-transparent rounded-md hover:bg-red-700 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25"
