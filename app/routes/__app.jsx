@@ -11,6 +11,5 @@ export default function HeaderLayout() {
 	);
 }
 export const loader = ({ request }) => {
-	console.log("🚀request:", request);
 	return getUserFromSession(request);
 };

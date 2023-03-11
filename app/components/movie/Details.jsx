@@ -2,19 +2,19 @@
 
 import { convertBoolean } from "~/utils/convertBoolean";
 
-export const MovieDetails = ({ movieId }) => {
+export const Details = ({ movieId }) => {
 	return (
 		<div className="text-lg font-comic sm:text-base">
-			<span className="flex justify-center text-3xl text-white underline decoration-pink-800/80 decoration-wavy sm:text-2xl">
+			<span className="flex justify-center mt-4 text-3xl text-white underline decoration-pink-800/80 decoration-wavy sm:text-2xl sm:mt-5">
 				{movieId.original_title}
 			</span>
-			<div className="flex mt-10 text-white p-14 lg:flex lg:flex-col  lg:text-xl lg:w-screen sm:w-screen">
+			<div className="flex mt-2 text-white p-14 lg:flex lg:flex-col  lg:text-xl lg:w-screen sm:w-screen">
 				<img
 					src={`https://image.tmdb.org/t/p/w500/${movieId.backdrop_path}`}
 					alt="image-movie"
 					className="w-2/6 rounded-t-3xl xl:w-2/5 lg:w-10/12 sm:w-screen"
 				/>
-				<div className="flex flex-col justify-start gap-5 ml-8 lg:gap-1">
+				<div className="flex flex-col justify-start gap-5 ml-8 lg:gap-1 sm:ml-0 sm:text-base">
 					<span className="text-pink-800/80 ">
 						Release date:
 						<span className="ml-2 text-white">
@@ -57,8 +57,8 @@ export const MovieDetails = ({ movieId }) => {
 				</div>
 			</div>
 
-			<div className="flex justify-start relative bottom-12 w-2/5 p-4 text-lg ml-10">
-				<span className="text-white ">{movieId.overview}</span>
+			<div className="flex justify-start relative bottom-12 w-2/5 p-4 text-lg ml-10 sm:text-base sm:table-cell sm:p-6">
+				<span className="text-white">{movieId.overview}</span>
 			</div>
 		</div>
 	);

@@ -6,7 +6,7 @@ import { useNavigate } from "@remix-run/react";
 import { useParams } from "@remix-run/react";
 import { useState } from "react";
 
-export const PopularMovies = ({ movies }) => {
+export const Popular = ({ movies }) => {
 	const [inputSearch, setInputSearch] = useState("");
 
 	const navigate = useNavigate();
@@ -29,7 +29,7 @@ export const PopularMovies = ({ movies }) => {
 
 	return (
 		<>
-			<span className=" flex justify-center text-3xl text-white underline decoration-pink-800/80 decoration-wavy font-comic">
+			<span className=" flex justify-center  mt-4  text-3xl text-white underline decoration-pink-800/80 decoration-wavy font-comic">
 				Popular Movies
 			</span>
 			<div className="flex justify-center font-comic">

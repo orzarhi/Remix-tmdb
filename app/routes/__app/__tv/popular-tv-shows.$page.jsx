@@ -1,25 +1,25 @@
 import { useLoaderData } from "@remix-run/react";
-import { getPopularMovies } from "~/api/movies/movies";
-import { Popular } from "~/components/movie/Popular";
+import { getPopularTvShows } from "~/api/tv/tv";
+import { Popular } from "~/components/tv/Popular";
 import { requireUserSession } from "~/services/cookiesService";
 
-export default function PopularMovie() {
-	const movies = useLoaderData();
+export default function PopularTv() {
+	const tvShows = useLoaderData();
 
 	return (
 		<div className="text-xl">
-			<Popular movies={movies} />
+			<Popular tvShows={tvShows} />
 		</div>
 	);
 }
 export const loader = async ({ params, request }) => {
 	const userId = await requireUserSession(request);
 
-	return getPopularMovies(params.page, userId);
+	return getPopularTvShows(params.page, userId);
 };
 
 export const meta = () => {
 	return {
-		title: "Popular Movies",
+		title: "Popular Tv",
 	};
 };

@@ -1,18 +1,21 @@
 import { useLoaderData } from "@remix-run/react";
-import { getMovieById } from "~/api/movies/getPopularMovies";
-import { MovieDetails } from "~/components/movie/MovieDetails";
+import { getMovieById } from "~/api/movies/movies";
+import { Details } from "~/components/movie/Details";
+import { requireUserSession } from "~/services/cookiesService";
 
 export default function Movie() {
 	const movieId = useLoaderData();
 
 	return (
 		<div className="text-xl">
-			<MovieDetails movieId={movieId} />
+			<Details movieId={movieId} />
 		</div>
 	);
 }
-export const loader = async ({ params }) => {
-	return getMovieById(params.id);
+export const loader = async ({ params, request }) => {
+	const userId = await requireUserSession(request);
+
+	return getMovieById(params.id, userId);
 };
 export const meta = () => {
 	return {
