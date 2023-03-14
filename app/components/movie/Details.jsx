@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-
 import { convertBoolean } from "~/utils/convertBoolean";
 
 export const Details = ({ movieId }) => {
@@ -8,7 +7,7 @@ export const Details = ({ movieId }) => {
 			<span className="flex justify-center mt-4 text-3xl text-white underline decoration-pink-800/80 decoration-wavy sm:text-2xl sm:mt-5">
 				{movieId.original_title}
 			</span>
-			<div className="flex mt-2 text-white p-14 lg:flex lg:flex-col  lg:text-xl lg:w-screen sm:w-screen">
+			<div className="flex mt-2 text-white p-14 lg:flex lg:flex-col lg:text-xl lg:w-screen sm:w-screen">
 				<img
 					src={`https://image.tmdb.org/t/p/w500/${movieId.backdrop_path}`}
 					alt="image-movie"
@@ -57,7 +56,7 @@ export const Details = ({ movieId }) => {
 				</div>
 			</div>
 
-			<div className="flex justify-start relative bottom-12 w-2/5 p-4 text-lg ml-10 sm:text-base sm:table-cell sm:p-6">
+			<div className="relative flex justify-start w-2/5 p-4 ml-10 text-lg bottom-12 sm:text-base sm:table-cell sm:p-6">
 				<span className="text-white">{movieId.overview}</span>
 			</div>
 		</div>

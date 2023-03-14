@@ -20,7 +20,7 @@ export const Header = () => {
 								Popular Movies
 							</NavLink>
 						</li>
-						<li className="ml-8">
+						{/* <li className="ml-8">
 							<NavLink to="/">My Notes</NavLink>
 						</li>
 						<li className="ml-8">
@@ -28,7 +28,7 @@ export const Header = () => {
 						</li>
 						<li className="ml-8">
 							<NavLink to="/">My Notes</NavLink>
-						</li>
+						</li> */}
 
 						<li className="absolute right-0 mr-10">
 							<Form method="post" action="logout">

@@ -7,7 +7,7 @@ export const Details = ({ tvShow }) => {
 	return (
 		<div className="text-lg font-comic sm:text-base">
 			<span className="flex justify-center  mt-4 text-3xl text-white underline decoration-pink-800/80 decoration-wavy sm:text-2xl sm:mt-5">
-				{tvShow.name}
+				{tvShow?.name}
 			</span>
 			<div className="flex text-white p-14 lg:flex lg:flex-col  lg:text-xl lg:w-screen sm:w-screen">
 				<img
@@ -76,6 +76,7 @@ export const Details = ({ tvShow }) => {
 					</span>
 				</div>
 			)}
+
 			{/* <Similar tvId={tvShow.id} /> */}
 		</div>
 	);

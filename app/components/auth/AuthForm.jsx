@@ -24,7 +24,7 @@ export const AuthForm = () => {
 	const isSubmitting = navigation.state !== "idle";
 
 	return (
-		<div className="flex flex-col items-center min-h-screen pt-6 font-comic sm:justify-center sm:pt-0  p-5 mx-auto  sm:w-full">
+		<div className="flex flex-col items-center min-h-screen p-5 pt-6 mx-auto font-comic sm:justify-center sm:pt-0 sm:w-full">
 			<h2 className="mb-12 text-6xl font-extrabold text-center text-rose-200 ">
 				{title.split("").map((letter, index) => (
 					<span
@@ -77,7 +77,7 @@ export const AuthForm = () => {
 					</Link>
 				</div>
 				{validationErrors && (
-					<ul className="flex justify-center text-white underline text-xl decoration-red-600 m-5 hover:delay-150 hover:text-red-600 hover:decoration-white ">
+					<ul className="flex justify-center m-5 text-xl text-white underline decoration-red-600 hover:delay-150 hover:text-red-600 hover:decoration-white ">
 						{Object.values(validationErrors).map((error) => (
 							<li key={error}>{error}</li>
 						))}

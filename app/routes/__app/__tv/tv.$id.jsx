@@ -6,7 +6,6 @@ import { requireUserSession } from "~/services/cookiesService";
 
 export default function TvShow() {
 	const tvShow = useLoaderData();
-	console.log("🚀 tvShow:", tvShow);
 
 	return (
 		<div className="text-xl">
@@ -17,11 +16,14 @@ export default function TvShow() {
 export const loader = async ({ params, request }) => {
 	const userId = await requireUserSession(request);
 
-	return getTvShowById(params.id, userId);
-	// const similar = getTvSimilar(params.id, userId);
-	// console.log("🚀  similar:", similar);
+	return await getTvShowById(params.id, userId);
+	// const data2 = await getTvSimilar(params.id, userId);
 
-	// return json({ tvShow, similarTv: similar });
+	// const data = { data1, data2 };
+
+	// return data;
+	// const similar = await getTvSimilar(params.id, userId);
+	// console.log("🚀 similar:", similar);
 };
 export const meta = () => {
 	return {

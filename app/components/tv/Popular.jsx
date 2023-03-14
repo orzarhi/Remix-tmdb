@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import { IconButton } from "@mui/material";
-import { useNavigate } from "@remix-run/react";
+import { Form, useNavigate } from "@remix-run/react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 // eslint-disable-next-line no-duplicate-imports
 import { useParams } from "@remix-run/react";
@@ -22,9 +22,18 @@ export const Popular = ({ tvShows }) => {
 
 	return (
 		<>
-			<span className=" flex justify-center mt-4 text-3xl text-white underline decoration-pink-800/80 decoration-wavy font-comic">
+			<span className="flex justify-center mt-4 text-3xl text-white underline decoration-pink-800/80 decoration-wavy font-comic">
 				Popular Tv Shows
 			</span>
+			<Form method="post" className="flex justify-center mt-3 font-comic">
+				<input
+					className="w-1/5 mt-5 text-white bg-transparent placeholder:text-center"
+					placeholder="Search tv show"
+					id="name"
+					name="name"
+					autoComplete="off"
+				/>
+			</Form>
 			<div className="grid grid-cols-4 gap-4 text-white p-14 font-comic xl:grid xl:grid-cols-3 xl:w-full lg:grid lg:grid-cols-2 lg:w-full sm:grid sm:grid-cols-1 sm:w-full">
 				{tvShows.results?.map(
 					(tv) =>
