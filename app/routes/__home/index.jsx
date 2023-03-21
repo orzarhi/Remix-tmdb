@@ -5,7 +5,7 @@ import { requireUserSession } from "~/services/cookiesService";
 
 export default function Index() {
 	const movies = useLoaderData();
-	const TopFive = movies.results.slice(0, 5);
+	const TopFive = movies.results.slice(0, 10);
 
 	return <Home movies={TopFive} />;
 }

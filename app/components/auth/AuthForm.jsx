@@ -47,6 +47,7 @@ export const AuthForm = () => {
 						name="email"
 						className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 disabled:bg-gray-100"
 						required
+						autoComplete="off"
 					/>
 				</div>
 				<div className="mb-4">
@@ -72,12 +73,12 @@ export const AuthForm = () => {
 							Remember me
 						</label>
 					</div>
-					<Link to={"/"} className="text-sm text-white">
+					<Link className="text-sm text-white">
 						Forgot your password?
 					</Link>
 				</div>
 				{validationErrors && (
-					<ul className="flex justify-center m-5 text-xl text-white underline decoration-red-600 hover:delay-150 hover:text-red-600 hover:decoration-white ">
+					<ul className="flex justify-center m-5 text-xl text-white underline decoration-red-600">
 						{Object.values(validationErrors).map((error) => (
 							<li key={error}>{error}</li>
 						))}
