@@ -51,3 +51,4 @@ rm -rf app
 # copy your app over
 cp -R ../my-old-remix-app/app app
 ```
+https://user-images.githubusercontent.com/80851030/226699777-76acf460-73f0-4119-8f34-ff4be755f6ca.mp4
